@@ -1,3 +1,3 @@
 # sushamkumar.dev
 
-Hello, this is my first commit
+updated commit
