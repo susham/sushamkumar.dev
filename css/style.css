@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background-color: #222831; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: #222831;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; }
+
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  -webkit-box-shadow: var(--shadow-dark);
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem; }
+
+.navigation__nav {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: light 300;
+  font-size: 1.5rem;
+  color: #eeeeee;
+  display: flex;
+  list-style: none;
+  margin: 2rem;
+  justify-content: space-around; }
+  .navigation__nav > * {
+    margin: 2rem; }
+
+.navigation__name {
+  flex: 0 1 30%;
+  border-bottom: 4px solid;
+  border-image: linear-gradient(to right, #00d2ff, #3a7bd5);
+  border-image-slice: 1; }
+
+.navigation__projects {
+  align-self: flex-start; }
+  .navigation__projects:hover {
+    color: #00adb5; }
+
+.navigation__blog a {
+  text-decoration: none;
+  color: currentColor; }
+  .navigation__blog a:hover {
+    color: #00adb5; }
+
+.navigation__about:hover {
+  color: #00adb5; }
+
+.navigation__contact:hover {
+  color: #00adb5; }
+
+.intro {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: light 300;
+  margin-top: 5rem;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .intro__name {
+    text-align: center;
+    color: #eeeeee;
+    font-size: 3.5rem; }
+  .intro__description {
+    text-align: justify;
+    color: #eeeeee;
+    padding: 1rem 8rem;
+    font-size: 1.75rem; }

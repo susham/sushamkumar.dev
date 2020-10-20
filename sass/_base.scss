@@ -1,0 +1,45 @@
+// COLOR VARIABLES
+$color-primary: #222831;
+
+$color-secondary: #393e46;
+$color-tertiary: #00adb5;
+
+$color-grey-light-1: #eeeeee;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito Sans',
+sans-serif;
+$font-display: 'Josefin Sans',
+sans-serif;
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1rem=10px; 10px/16px=62.5%;
+    background-color: $color-primary;
+  
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: $color-primary;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
