@@ -1,6 +1,6 @@
 .container{
     max-width: 120rem;
-    margin: 8rem auto;
+    margin: 6rem auto;
     background-color: var(--color-grey-light-1);
     -webkit-box-shadow: var(--shadow-dark);
     box-shadow: var(--shadow-dark);
@@ -9,18 +9,21 @@
 
 
 .navigation{
-  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Nunito Sans',
+  sans-serif;
+  font-weight: 300;
+  font-size:1.7rem;
+  color: $color-grey-light-1;
 
     &__nav{
-        font-family: 'Nunito Sans',
-        sans-serif;
-        font-weight: light 300;
-        font-size:1.5rem;
-        color: $color-grey-light-1;
+        
         display:flex;
         list-style: none;
         margin:2rem;
-        justify-content: space-around;
+        justify-content: space-between;
 
         & > * {
            
@@ -28,14 +31,14 @@
         }
     }
 
-    &__name {
-       
-       flex:0 1 30%;
-       border-bottom: 4px solid;
-       border-image: linear-gradient(to right, rgb(0, 210, 255), rgb(58, 123, 213));
-       border-image-slice: 1;
+    &__logo{
+        display:inline;
+        border: 3px $color-tertiary solid;
+        border-radius: 3rem;
+        padding:0.7rem;
     }
 
+   
     &__projects {
          align-self: flex-start;
          &:hover {
@@ -70,15 +73,15 @@
 
 .intro {
 
-     font-family: 'Nunito Sans',
+      font-family: 'Nunito Sans',
      sans-serif;
-     font-weight: light 300;
+      font-weight: light 200;
+      height: 25rem;
+     display:flex;
      margin-top: 5rem;
-      height: 500px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-     
+     flex-direction: column;
+     justify-content: center;
+    
     &__name {
         text-align: center;
         color: $color-grey-light-1;
@@ -90,5 +93,34 @@
         color: $color-grey-light-1;
         padding: 1rem 8rem;
         font-size:1.75rem;
+
+       
     }
+  
+}
+
+
+.post__feed{
+    display:flex;
+    flex-direction: column;
+    color: $color-grey-light-1;
+    margin-top: 10rem;
+
+    &-header{
+        flex-grow: 1;
+        font-size:1.5rem;
+
+    }
+}
+
+.post {
+    background-color: #393e46;
+    
+}
+
+
+
+
+.footer {
+    background-color: #00adb5;
 }
