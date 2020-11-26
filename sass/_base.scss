@@ -6,14 +6,10 @@ $color-tertiary: #00adb5;
 
 $color-grey-light-1: #eeeeee;
 
-$color-grey-dark-1: #54483A;
-$color-grey-dark-2: #6D5D4B;
-
 // FONT VARIABLES
-$font-primary: 'Nunito Sans',
+$font-primary: 'Open Sans',
 sans-serif;
-$font-display: 'Josefin Sans',
-sans-serif;
+
 
 
 * {
@@ -35,7 +31,7 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-primary;
     font-weight: 400;
     line-height: 1.6;
     background-color: $color-primary;
