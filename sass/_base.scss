@@ -1,0 +1,39 @@
+// COLOR VARIABLES
+$color-primary: #222831;
+
+$color-secondary: #393e46;
+$color-tertiary: #00adb5;
+
+$color-grey-light-1: #eeeeee;
+
+// FONT VARIABLES
+$font-primary: 'Open Sans',
+sans-serif;
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1rem=10px; 10px/16px=62.5%;
+    background-color: $color-primary;
+  
+}
+
+body {
+    font-family: $font-primary;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: $color-primary;
+    width: 100%;
+}
