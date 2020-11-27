@@ -1,5 +1,3 @@
 # sushamkumar.dev
 
 updated commit
-
-
