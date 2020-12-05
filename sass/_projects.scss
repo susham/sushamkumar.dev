@@ -1,8 +1,9 @@
 .projects__heading{
-    color:$color-tertiary;
+    color:$color-grey-light-1;
     text-align:center;
     margin-top: 3rem;
     margin-bottom: 3rem;
+    font-size:2.2rem;
 }
 
 .project__feed{
@@ -19,8 +20,9 @@
 }
 
 .project{
+ 
     display:grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     justify-items: center;
     grid-column-gap: 2rem;
     background-color: #393e46;
@@ -29,19 +31,18 @@
     border-radius: 2rem;
    
     overflow: hidden;
-    justify-content: center;
+    
     transition: all .2s ease-in-out;
 
    
 
     &__img{
         width:100%;
+        height:100%;
         object-position: center;
-        object-fit: cover;
-        border-top-left-radius: 2rem;
-        border-bottom-left-radius: 2rem;
-        margin-right:2rem;
-        align-self: stretch;
+        object-fit: fill;
+        border-radius: 2rem;
+        
     }
     &:hover{
         transform: scale(1.1);
@@ -55,6 +56,11 @@
     flex-direction: column;
     font-size:1.6rem;
     justify-content: center;
+
+    &-link{
+        color:$color-grey-light-1;
+    text-decoration: none;        
+    }
 
     &-name{
         font-size:1.8rem;
@@ -88,4 +94,13 @@
         border-radius: 1rem;
         font-size:1.2rem;
     }
+}
+
+.heading{
+    font-size:2.2rem;
+    text-align: center;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    color:$color-grey-light-1;
+
 }

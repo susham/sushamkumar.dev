@@ -35,13 +35,23 @@
         border: 3px $color-tertiary solid;
         border-radius: 3rem;
         padding:0.7rem;
+        & a {
+            text-decoration:none;
+            color:currentColor;
+         }
     }
 
    
     &__projects {
+      
          align-self: flex-start;
          &:hover {
              color:$color-tertiary;
+         }
+
+         & a {
+            text-decoration:none;
+            color:currentColor;
          }
         
     }
