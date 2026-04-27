@@ -25,10 +25,7 @@
     ],
     "workers_dev": false,
     "preview_urls": false,
-    "routes": [
-      { "pattern": "sushamkumar.dev/*", "zone_name": "sushamkumar.dev" },
-      { "pattern": "www.sushamkumar.dev/*", "zone_name": "sushamkumar.dev" }
-    ],
+    "custom_domains": ["sushamkumar.dev", "www.sushamkumar.dev"],
     "assets": {
       "binding": "ASSETS",
       "directory": "dist"
