@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,11 @@
   "author": "Susham Yerabolu",
   "license": "ISC",
   "dependencies": {
+    "@astrojs/cloudflare": "11",
     "astro": "^4.16.0",
     "sass": "^1.80.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.85.0"
   }
 }
