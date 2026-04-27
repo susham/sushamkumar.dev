@@ -1,0 +1,354 @@
+// COLOR VARIABLES
+$color-primary: #222831;
+$color-secondary: #393e46;
+$color-tertiary: #00adb5;
+$color-grey-light-1: #eeeeee;
+
+// FONT VARIABLES
+$font-primary: 'Open Sans', sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    background-color: $color-primary;
+}
+
+body {
+    font-family: $font-primary;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: $color-primary;
+    width: 100%;
+}
+
+// --- NAVIGATION ---
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: $font-primary;
+    font-size: 1.6rem;
+    padding: 3rem;
+    color: $color-grey-light-1;
+    background-color: $color-secondary;
+
+    &__nav {
+        display: flex;
+        list-style: none;
+        margin: 2rem;
+        justify-content: space-between;
+
+        & > * {
+            margin: 2rem;
+        }
+    }
+
+    &__logo {
+        display: inline;
+        border: 3px $color-tertiary solid;
+        border-radius: 3rem;
+        padding: 0.7rem;
+
+        & a {
+            text-decoration: none;
+            color: currentColor;
+        }
+    }
+
+    &__projects,
+    &__blog,
+    &__about,
+    &__contact {
+        &:hover {
+            color: $color-tertiary;
+        }
+
+        & a {
+            text-decoration: none;
+            color: currentColor;
+
+            &:hover {
+                color: $color-tertiary;
+            }
+        }
+    }
+}
+
+// --- INTRO ---
+.intro {
+    background-color: $color-secondary;
+    font-family: $font-primary;
+    font-weight: 300;
+    font-size: 2rem;
+    padding: 3rem 0;
+    margin-top: -1rem;
+    color: $color-grey-light-1;
+
+    &__name {
+        text-align: center;
+
+        &-primary {
+            color: $color-tertiary;
+        }
+    }
+
+    &__description {
+        text-align: center;
+        width: 66.666667%;
+        margin: 2rem auto 0;
+    }
+}
+
+// --- BLOG LIST (homepage + blog index) ---
+.recent_posts {
+    text-align: center;
+    color: $color-tertiary;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 3rem;
+}
+
+.post__feed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post {
+    font-family: $font-primary;
+    color: $color-grey-light-1;
+    width: 66.666667%;
+    margin: 1rem auto 5rem;
+
+    &-link {
+        color: $color-grey-light-1;
+        text-decoration: none;
+    }
+
+    &__header {
+        font-size: 1.8rem;
+        text-align: start;
+    }
+
+    &__snippet {
+        font-size: 1.6rem;
+        text-align: justify;
+        opacity: 0.7;
+    }
+
+    &__metadata {
+        display: flex;
+        margin-top: 1rem;
+        justify-content: start;
+        font-size: 1.2rem;
+        font-weight: 600;
+        opacity: 0.8;
+
+        &-pubDate {
+            margin-right: 2rem;
+        }
+    }
+}
+
+// --- BLOG POST PAGE ---
+.blog-post {
+    width: 66.666667%;
+    margin: 4rem auto;
+    color: $color-grey-light-1;
+    font-size: 1.6rem;
+
+    &__title {
+        font-size: 3rem;
+        color: $color-tertiary;
+        margin-bottom: 1rem;
+    }
+
+    &__meta {
+        font-size: 1.2rem;
+        opacity: 0.7;
+        margin-bottom: 3rem;
+    }
+
+    &__content {
+        h1, h2, h3, h4 {
+            color: $color-tertiary;
+            margin: 2.5rem 0 1rem;
+        }
+
+        p {
+            margin-bottom: 1.6rem;
+            opacity: 0.9;
+        }
+
+        a {
+            color: $color-tertiary;
+        }
+
+        code {
+            background-color: $color-secondary;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.4rem;
+            font-size: 1.4rem;
+        }
+
+        pre {
+            background-color: $color-secondary;
+            padding: 2rem;
+            border-radius: 1rem;
+            overflow-x: auto;
+            margin-bottom: 2rem;
+
+            code {
+                background: none;
+                padding: 0;
+            }
+        }
+
+        ul, ol {
+            padding-left: 2rem;
+            margin-bottom: 1.6rem;
+        }
+    }
+}
+
+// --- PROJECTS ---
+.projects__heading {
+    color: $color-grey-light-1;
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 2.2rem;
+}
+
+.project__feed {
+    display: flex;
+    flex-direction: column;
+    width: 66.66667%;
+    margin: 0 auto;
+}
+
+.img__container {
+    width: 100%;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    grid-column-gap: 2rem;
+    background-color: $color-secondary;
+    width: 100%;
+    margin-bottom: 3rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: fill;
+        border-radius: 2rem;
+    }
+}
+
+.project__info {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    justify-content: center;
+
+    &-link {
+        color: $color-grey-light-1;
+        text-decoration: none;
+    }
+
+    &-name {
+        font-size: 1.8rem;
+        color: $color-tertiary;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    &-description {
+        font-size: 1.2rem;
+        opacity: 0.8;
+        color: $color-grey-light-1;
+        text-align: start;
+        margin-bottom: 2rem;
+    }
+}
+
+.project__info-tags {
+    display: flex;
+    justify-content: center;
+    color: $color-grey-light-1;
+    opacity: 0.7;
+    flex-wrap: wrap;
+
+    & span {
+        background-color: $color-primary;
+        padding: 1rem;
+        margin: 0.5rem;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+.heading {
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 5rem 0;
+    color: $color-grey-light-1;
+}
+
+// --- FOOTER ---
+.footer {
+    background-color: $color-secondary;
+
+    &__content {
+        color: $color-grey-light-1;
+        display: flex;
+        justify-content: space-between;
+        width: 66.666667%;
+        margin: 0 auto;
+        padding: 2rem;
+
+        &-copyright {
+            font-size: 1.3rem;
+        }
+
+        &-media {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.3rem;
+
+            & li a {
+                padding-right: 2rem;
+                text-decoration: none;
+                color: $color-grey-light-1;
+
+                &:hover {
+                    color: $color-tertiary;
+                }
+            }
+        }
+    }
+}

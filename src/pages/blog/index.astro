@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+<BaseLayout title="Blog — Susham Yerabolu" description="Articles by Susham Yerabolu on Node.js, JavaScript, and software engineering.">
+  <div class="recent_posts">
+    <span>Blog</span>
+  </div>
+  <section class="post__feed">
+    {posts.map((post) => (
+      <div class="post">
+        <a href={`/blog/${post.slug}`} class="post-link">
+          <h3 class="post__header">{post.data.title}</h3>
+          <p class="post__snippet">{post.data.description}</p>
+          <div class="post__metadata">
+            <span class="post__metadata-pubDate">
+              {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+            </span>
+            <span class="post__metadata-readtime">{post.data.readTime}</span>
+          </div>
+        </a>
+      </div>
+    ))}
+  </section>
+</BaseLayout>

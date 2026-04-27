@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    name: 'Natours',
+    description: 'Landing page developed as part of the Advanced CSS and Sass course by Jonas Schmedtmann.',
+    tags: ['HTML5', 'CSS3'],
+    img: 'https://ik.imagekit.io/uvm4y3pkttk/natours_w1_0Vhvs_.jpg?tr=w-400,h-200,dpr-2',
+    imgAlt: 'Natours landing page snippet',
+    url: 'https://sushamkumar.dev/projects/natours/index.html',
+  },
+  {
+    name: 'Nexter',
+    description: 'CSS Grid layout project developed as part of the Advanced CSS and Sass course by Jonas Schmedtmann.',
+    tags: ['HTML5', 'CSS3'],
+    img: 'https://ik.imagekit.io/uvm4y3pkttk/nexter_6ClcmaGaz.jpg?tr=w-400,h-200,dpr-2',
+    imgAlt: 'Nexter landing page snippet',
+    url: 'https://sushamkumar.dev/projects/nexter/index.html',
+  },
+  {
+    name: 'Trillo',
+    description: 'Flexbox layout project developed as part of the Advanced CSS and Sass course by Jonas Schmedtmann.',
+    tags: ['HTML5', 'CSS3'],
+    img: 'https://ik.imagekit.io/uvm4y3pkttk/trillo_Jz1EhnnG2.jpg?tr=w-400,h-200,dpr-2',
+    imgAlt: 'Trillo landing page snippet',
+    url: 'https://sushamkumar.dev/projects/trillo/index.html',
+  },
+  {
+    name: 'DeepMarket',
+    description: 'DeepMarket utilizes edge computing to train machine learning models at a minimal cost. Leverages a shared economy of available computational resources similar to Uber or Airbnb.',
+    tags: ['Docker', 'JWT', 'Node.js'],
+    img: 'https://ik.imagekit.io/uvm4y3pkttk/deepmarket_F51AZO5TB.JPG',
+    imgAlt: 'DeepMarket landing page snippet',
+    url: 'https://deepmarket.cs.pdx.edu/',
+    isOpenSource: true,
+  },
+];
+---
+<BaseLayout title="Projects — Susham Yerabolu" description="Projects built by Susham Yerabolu">
+  <div class="projects__heading">
+    <span>Projects</span>
+  </div>
+  <div class="project__feed">
+    {projects.map((project) => (
+      <>
+        {project.isOpenSource && (
+          <div class="heading"><span>Open Source Project</span></div>
+        )}
+        <a href={project.url} class="project__info-link" target="_blank" rel="noopener">
+          <div class="project">
+            <div class="img__container">
+              <img class="project__img" src={project.img} alt={project.imgAlt} />
+            </div>
+            <div class="project__info">
+              <span class="project__info-name">{project.name}</span>
+              <p class="project__info-description">{project.description}</p>
+              <div class="project__info-tags">
+                {project.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+            </div>
+          </div>
+        </a>
+      </>
+    ))}
+  </div>
+</BaseLayout>

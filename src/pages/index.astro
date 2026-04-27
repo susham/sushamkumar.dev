@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).slice(0, 3);
+---
+<BaseLayout>
+  <section class="intro">
+    <h1 class="intro__name">Hi 👋, I'm <span class="intro__name-primary">Susham</span></h1>
+    <div class="intro__description">
+      <p>
+        A Software Engineer, currently living in Austin, TX. I am passionate about building
+        scalable backend applications with Node.js and JavaScript. I blog about things I learn
+        and build along the way.
+      </p>
+    </div>
+  </section>
+
+  <div class="recent_posts">
+    <span>Recent Posts</span>
+  </div>
+
+  <section class="post__feed">
+    {posts.map((post) => (
+      <div class="post">
+        <a href={`/blog/${post.slug}`} class="post-link">
+          <h3 class="post__header">{post.data.title}</h3>
+          <p class="post__snippet">{post.data.description}</p>
+          <div class="post__metadata">
+            <span class="post__metadata-pubDate">
+              {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+            </span>
+            <span class="post__metadata-readtime">{post.data.readTime}</span>
+          </div>
+        </a>
+      </div>
+    ))}
+  </section>
+</BaseLayout>
