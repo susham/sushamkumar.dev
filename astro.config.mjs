@@ -1,7 +1,10 @@
 import { defineConfig } from 'astro/config';
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   site: 'https://sushamkumar.dev',
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -11,4 +14,7 @@ export default defineConfig({
       },
     },
   },
+
+  output: "hybrid",
+  adapter: cloudflare()
 });
