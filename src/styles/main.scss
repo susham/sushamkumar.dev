@@ -91,6 +91,82 @@ body {
             }
         }
     }
+
+    &__toggle {
+        display: none;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        padding: 0.8rem;
+    }
+
+    &__toggle-line {
+        display: block;
+        width: 2.2rem;
+        height: 0.2rem;
+        background-color: $color-grey-light-1;
+        border-radius: 999px;
+    }
+
+    &__toggle-line + &__toggle-line {
+        margin-top: 0.45rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2rem 1.6rem;
+    }
+
+    .navigation__logo {
+        margin: 0;
+    }
+
+    .navigation__toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navigation__nav {
+        display: none;
+        margin: 1.2rem 0 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(34, 40, 49, 0.75);
+        border: 1px solid rgba(238, 238, 238, 0.12);
+        border-radius: 1rem;
+        padding: 1rem 0;
+    }
+
+    .navigation__nav[data-open='true'] {
+        display: flex;
+    }
+
+    .navigation__nav > * {
+        margin: 0.7rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation {
+        font-size: 1.5rem;
+        padding: 1.6rem 1.2rem;
+    }
+
+    .navigation__nav {
+        margin-top: 1rem;
+        max-width: 100%;
+    }
+
+    .navigation__nav > * {
+        margin: 0.6rem 0;
+    }
 }
 
 // --- INTRO ---

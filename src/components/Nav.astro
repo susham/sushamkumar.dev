@@ -5,7 +5,18 @@ const currentPath = Astro.url.pathname;
   <div class="navigation__logo">
     <a href="/">Susham Yerabolu</a>
   </div>
-  <ul class="navigation__nav">
+  <button
+    class="navigation__toggle"
+    type="button"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+    aria-controls="primary-navigation"
+  >
+    <span class="navigation__toggle-line"></span>
+    <span class="navigation__toggle-line"></span>
+    <span class="navigation__toggle-line"></span>
+  </button>
+  <ul id="primary-navigation" class="navigation__nav" data-open="false">
     <li class="navigation__blog">
       <a href="/blog">Blog</a>
     </li>
@@ -20,3 +31,23 @@ const currentPath = Astro.url.pathname;
     </li>
   </ul>
 </nav>
+
+<script>
+  const navToggle = document.querySelector('.navigation__toggle');
+  const navMenu = document.querySelector('#primary-navigation');
+
+  if (navToggle instanceof HTMLButtonElement && navMenu instanceof HTMLElement) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.dataset.open === 'true';
+      navMenu.dataset.open = isOpen ? 'false' : 'true';
+      navToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    });
+
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.dataset.open = 'false';
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
